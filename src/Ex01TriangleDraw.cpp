@@ -4,14 +4,21 @@
 #include <iostream>
 #include <glad/glad.h>
 #include <vector>
-#include "OGLProgram.h"
+// #include "OGLProgram.h"
 #include "Ex01TriangleDraw.h"
+#include "GegOpenGLProgram.h"
 
 void Ex01TriangleDraw::Start() 
 {
-    GLuint VertexShaderId = CreateShader("resources/shaders/triangle.vert", GL_VERTEX_SHADER);
-    GLuint FragmeShaderId = CreateShader("resources/shaders/triangle.frag", GL_FRAGMENT_SHADER);
-    ProgramId = CreateProgram(VertexShaderId, FragmeShaderId);
+    // GLuint VertexShaderId = CreateShader("resources/shaders/triangle.vert", GL_VERTEX_SHADER);
+    // GLuint FragmeShaderId = CreateShader("resources/shaders/triangle.frag", GL_FRAGMENT_SHADER);
+    // ProgramId = CreateProgram(VertexShaderId, FragmeShaderId);
+    GegOGLProgram* Geg = new GegOGLProgram(
+                                "resources/shaders/triangle.vert",
+                                "resources/shaders/triangle.frag",
+                                GL_VERTEX_SHADER,
+                                GL_FRAGMENT_SHADER);
+    ProgramId = Geg->GegGetProgramId();
 
     std::vector<float> Vertices = {
         0.5f, -0.5f, 0.0f, //bottom right
