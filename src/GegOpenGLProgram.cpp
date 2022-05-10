@@ -1,6 +1,6 @@
 #include <glad/glad.h>
-#include "GegOpenGLProgram.h"
 #include "OGLProgram.h"
+#include "GegOpenGLProgram.h"
 
 GegOGLProgram::GegOGLProgram(const std::string& InVertexFilePath, const std::string& InFragmeFilePath, GLenum InVertexShaderType, GLenum InFragmShaderType)
 {
