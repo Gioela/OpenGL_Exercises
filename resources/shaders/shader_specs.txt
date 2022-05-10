@@ -1,0 +1,12 @@
+#version 450 core
+
+# pin di ingresso, inizia con indice zero
+layout (location = 0) in vec3 vert_pos;
+
+#entry point del programma
+void main()
+{
+    gl_Position = vec4(vert_pos, 1.f);  # 1.f è valore neutro. la 4a coordinata serve per la prospettiva
+                                        # il prospective devide lo fa la GPU
+
+}
